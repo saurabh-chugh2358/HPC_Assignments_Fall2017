@@ -34,3 +34,17 @@ end
 function get_lcm(x, y)
     return (x*y)/get_gcd(x, y)
 end
+
+
+function generate_lcm(x,y)
+    greater = max(x,y)
+    lcm =1
+   while(true)
+       if((greater % x == 0) && (greater % y == 0))
+           lcm = greater
+           break
+        end
+       greater += 1
+    end
+   return lcm
+end
