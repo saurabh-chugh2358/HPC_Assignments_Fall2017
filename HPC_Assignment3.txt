@@ -1,0 +1,36 @@
+In the following questions, write the codes directed and copy and paste them into this document which you will then submit. Do not use native Julia methods (factor, lcm, gcd). 
+
+1.	Write a program in Julia that prints all the factors of a positive integer supplied by the user.
+
+function get_factors(n)
+    for i in 1:(n/2)
+        if n%i == 0 
+            print(i)
+            print(" ")
+            println(n/i)
+        end
+    end
+end
+
+
+2.	Write a program in Julia that finds the Greatest Common Denominator of any two positive integers.
+
+function get_gcd(x, y)
+    if x ==y
+        return x
+    end
+        
+    gcd = 1
+    for i in 1:min(x, y, min(x, y, abs(x-y)))
+        if x%i == 0 & y%i == 0
+            gcd = i
+        end
+    end
+    return gcd
+end
+
+3.	Write a program in Julia that finds the Least Common Multiple of any two positive integers.
+
+function get_lcm(x, y)
+    return (x*y)/get_gcd(x, y)
+end
